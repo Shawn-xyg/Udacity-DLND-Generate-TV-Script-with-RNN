@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>dlnd_tv_script_generation (1)</title>
+<title>dlnd_tv_script_generation</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -14427,7 +14427,13 @@ Model Trained and Saved
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The longer the sequence, the slower the</p>
+<p>Below is the set of hyperparameters I used for the training:</p>
+<p>num_epochs = 10</p>
+<p>learning_rate = 0.0001</p>
+<p>hidden_dim = 512</p>
+<p>sequence length = 100</p>
+<p>batch size = 128</p>
+<p>During multiple trials, I found that the longer the sequence, the slower the training progress is. In addition, the length of the sequence does not affect the convergence speed by much. A learning rate of 0.0001 is a good choice for the model, as this learning rate allows the model to learn at a steady speed without getting stuck in local optimum or running too slow. For hidden dimension, since the training data is tv show script data, I chose a hidden dimension of 512 and 3 layers for the LSTM layers to make sure the model capacity is high enough to capture the patterns in the sequences without getting too large to undermine the training efficiency. The fact that the model is still learning after 10 epochs indicates the model complexity is appropriate for this task.</p>
 
 </div>
 </div>
